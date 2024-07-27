@@ -1,7 +1,7 @@
 {
   "name": "sdk-028",
-  "version": "1.0.0",
-  "description": "Hi! I'm your first **Markdown** file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.",
+  "version": "1.0.2",
+  "description": "test sdk",
   "main": "dist/index.js",
   "type": "module",
   "types": "dist/index.d.ts",
