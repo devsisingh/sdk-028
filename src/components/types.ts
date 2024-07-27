@@ -51,3 +51,37 @@ export interface VpnNode {
   export interface VpnNodesResponse {
     nodes: VpnNode[];
   }
+
+
+  // Example types definition for the VPN nodes
+  export interface WiFiNodeStatus {
+    macAddress: string;
+    ipAddress: string;
+    connectedAt: string;
+    totalConnectedTime: number;
+    connected: boolean;
+    lastChecked: string;
+    defaultGateway: string;
+    manufacturer: string;
+    interfaceName: string;
+    hostSSID: string;
+  }
+  
+  // Define the WiFiNode interface based on the provided data structure
+  export interface WiFiNode {
+    id: number;
+    gateway: string;
+    created_at: string;
+    updated_at: string;
+    status: WiFiNodeStatus[];
+    password: string;
+    location: string;
+    price_per_min: string;
+    wallet_address: string;
+    chain_name: string;
+  }
+  
+  // Example type for the API response containing WiFi nodes
+  export interface WiFiNodesResponse {
+    nodes: WiFiNode[];
+  }

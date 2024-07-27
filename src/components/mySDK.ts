@@ -1,6 +1,6 @@
 // src/mySDK.ts
 
-import { Review, ReviewStats, VpnNodesResponse } from './types';
+import { Review, ReviewStats, VpnNodesResponse, WiFiNodesResponse } from './types';
 
 export async function getReviews(page: number = 1): Promise<Review[]> {
   const url = `https://gateway.dev.netsepio.com/api/v1.0/getreviews?page=${page}`;
@@ -56,6 +56,19 @@ const API_URL = 'https://gateway.erebrus.io/api/v1.0/nodes/all';
   }
 };
 
+// Function to fetch all VPN nodes
+export const getAllWifi = async (): Promise<WiFiNodesResponse> => {
+  const API_URL = 'https://dev.gateway.erebrus.io/api/v1.0/nodedwifi/all';
+  
+    try {
+      const response = await fetch(API_URL);
+      return response.json();
+    } catch (error) {
+      console.error('Error fetching VPN nodes:', error);
+      throw error;
+    }
+  };
+
 export class NetSepioSDK {
   async getReviews(page: number = 1): Promise<Review[]> {
     return await getReviews(page);
@@ -67,5 +80,9 @@ export class NetSepioSDK {
 
   async getAllVPNs(): Promise<VpnNodesResponse> {
     return await getAllVPNs();
+  }
+
+  async getAllWifi(): Promise<WiFiNodesResponse> {
+    return await getAllWifi();
   }
 }
