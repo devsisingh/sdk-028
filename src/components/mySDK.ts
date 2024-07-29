@@ -44,8 +44,8 @@ export async function getAllReviewsAndStats(): Promise<ReviewStats> {
 }
 
 // Function to fetch all VPN nodes
-export const getAllVPNs = async (): Promise<VpnNodesResponse> => {
-const API_URL = 'https://gateway.erebrus.io/api/v1.0/nodes/all';
+export const getAllVPNs = async (param?: string): Promise<VpnNodesResponse> => {
+const API_URL = `${param}api/v1.0/nodes/all`;
 
   try {
     const response = await fetch(API_URL);
